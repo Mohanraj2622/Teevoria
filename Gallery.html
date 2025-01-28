@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Gallery - ProPrint Designs</title>
+    <link rel="icon" href="/path-to-your-icon/favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 2rem;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #1abc9c;
+        }
+        .gallery {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .gallery-item h3 {
+            text-align: center;
+            padding: 10px;
+            font-size: 1.2rem;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Design Gallery</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="gallery">
+        <div class="gallery-item">
+            <img src="design.jpg" alt="Modern Abstract Design">
+            <h3>Modern Abstract</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="last eye.jpg" alt="Geometric Style Design">
+            <h3>Geometric Style</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="last eye.jpg" alt="Minimalistic Art Design">
+            <h3>Minimalistic Art</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="last eye.jpg" alt="Floral Patterns Design">
+            <h3>Floral Patterns</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="townlist.jpg" alt="Vintage Look Design">
+            <h3>Vintage Look</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="townlist.jpg" alt="Typography Design">
+            <h3>Typography Style</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="proprint.jpg" alt="Creative Illustration Design">
+            <h3>Creative Illustration</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="proprint.jpg" alt="Artistic Design">
+            <h3>Artistic Design</h3>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ProPrint Designs. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

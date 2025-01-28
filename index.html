@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProPrint Designs</title>
+    <link rel="icon" href="/path-to-your-icon/favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 2rem;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #1abc9c;
+        }
+        .container {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+        .card h3 {
+            text-align: center;
+            padding: 10px;
+            font-size: 1.2rem;
+        }
+
+        .slider-container {
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+        .slider img {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 10px;
+            border-radius: 8px;
+        }
+        .slider-buttons {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .slider-buttons button {
+            background-color: #2c3e50;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ProPrint Designs</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Top Design's</h1>
+    <main class="container">
+        
+        <div class="card">
+            <img src="design.jpg" alt="Design 1">
+            <h3>Modern Abstract</h3>
+        </div>
+        <div class="card">
+            <img src="proprint.jpg" alt="Design 2">
+            <h3>Geometric Style</h3>
+        </div>
+        <div class="card">
+            <img src="last eye.jpg" alt="Design 3">
+            <h3>Minimalistic Art</h3>
+        </div>
+        <div class="card">
+            <img src="townlist.jpg" alt="Design 4">
+            <h3>Floral Patterns</h3>
+        </div>
+    </main>
+    <section class="slider-container">
+        <div class="slider" id="slider">
+            <img src="design.jpg" alt="Slider 1">
+            <img src="last eye.jpg" alt="Slider 2">
+            <img src="townlist.jpg" alt="Slider 3">
+            <img src="design.jpg" alt="Slider 4">
+            <img src="townlist.jpg" alt="Slider 3">
+            <img src="design.jpg" alt="Slider 4">
+            <img src="townlist.jpg" alt="Slider 3">
+            <img src="design.jpg" alt="Slider 4">
+            <img src="townlist.jpg" alt="Slider 3">
+            <img src="design.jpg" alt="Slider 4">
+            <img src="townlist.jpg" alt="Slider 3">
+            <img src="design.jpg" alt="Slider 4">
+            <img src="townlist.jpg" alt="Slider 3">
+            <img src="design.jpg" alt="Slider 4">
+        </div>
+        <div class="slider-buttons">
+            <button id="prev">&#10094;</button>
+            <button id="next">&#10095;</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ProPrint Designs. All Rights Reserved.</p>
+    </footer>
+    <script>
+        const slider = document.getElementById('slider');
+        const next = document.getElementById('next');
+        const prev = document.getElementById('prev');
+
+        let scrollAmount = 0;
+        const scrollStep = 310; // Adjust based on image width + margin
+
+        next.addEventListener('click', () => {
+            scrollAmount += scrollStep;
+            slider.style.transform = `translateX(-${scrollAmount}px)`;
+        });
+
+        prev.addEventListener('click', () => {
+            scrollAmount -= scrollStep;
+            if (scrollAmount < 0) scrollAmount = 0;
+            slider.style.transform = `translateX(-${scrollAmount}px)`;
+        });
+
+        // Touch support
+        let startX;
+        let isDragging = false;
+
+        slider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        });
+
+        slider.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const touchX = e.touches[0].clientX;
+            const diffX = startX - touchX;
+
+            if (diffX > 50) {
+                scrollAmount += scrollStep;
+                slider.style.transform = `translateX(-${scrollAmount}px)`;
+                isDragging = false;
+            } else if (diffX < -50) {
+                scrollAmount -= scrollStep;
+                if (scrollAmount < 0) scrollAmount = 0;
+                slider.style.transform = `translateX(-${scrollAmount}px)`;
+                isDragging = false;
+            }
+        });
+
+        slider.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+    </script>
+</body>
+</html>
