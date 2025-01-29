@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProPrint Designs</title>
-    <link rel="icon" href="/path-to-your-icon/favicon.ico">
+    <title>Teevoria Designs</title>
+    <link rel="icon" href="Design's/teevoria logo.webp" sizes="32x32">
     <style>
         * {
             margin: 0;
@@ -12,64 +13,130 @@
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
+
+        .favicon {
+            border-radius: 50%;
+            /* Makes the icon circular */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            /* Adds a shadow */
+        }
+
         body {
             background-color: #f4f4f9;
             color: #333;
             line-height: 1.6;
         }
-        header {
+
+        /* Menu Styling */
+        .navbar {
             background-color: #2c3e50;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: sticky;
             top: 0;
+            width: 100%;
             z-index: 1000;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        header h1 {
-            font-size: 2rem;
+
+        /* Logo Styling */
+        .navbar h1 {
+            font-size: 1.8rem;
+            margin: 0;
         }
-        nav {
-            margin-top: 10px;
+
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            font-size: 28px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            display: none;
         }
-        nav ul {
+
+        /* Navigation Links */
+        .nav-links {
             list-style: none;
             display: flex;
-            justify-content: center;
         }
-        nav ul li {
+
+        .nav-links li {
             margin: 0 15px;
         }
-        nav ul li a {
+
+        .nav-links a {
             text-decoration: none;
-            color: #fff;
+            color: white;
             font-size: 1rem;
-            transition: color 0.3s;
+            transition: color 0.3s ease-in-out;
         }
-        nav ul li a:hover {
+
+        .nav-links a:hover {
             color: #1abc9c;
         }
+
+        /* Mobile Menu */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -250px;
+                width: 250px;
+                height: 100%;
+                background-color: #2c3e50;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: right 0.3s ease-in-out;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .nav-links.show {
+                right: 0;
+            }
+        }
+
+
         .container {
             padding: 20px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
+
         .card {
             background: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            transition: transform 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
         }
+
         .card:hover {
-            transform: scale(1.05);
+            transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
+
+
         .card img {
             width: 100%;
             height: auto;
         }
+
         .card h3 {
             text-align: center;
             padding: 10px;
@@ -84,16 +151,19 @@
             overflow: hidden;
             position: relative;
         }
+
         .slider {
             display: flex;
             transition: transform 0.3s ease-in-out;
         }
+
         .slider img {
             width: 100%;
             max-width: 300px;
             margin: 0 10px;
             border-radius: 8px;
         }
+
         .slider-buttons {
             position: absolute;
             top: 50%;
@@ -102,6 +172,7 @@
             display: flex;
             justify-content: space-between;
         }
+
         .slider-buttons button {
             background-color: #2c3e50;
             color: #fff;
@@ -111,6 +182,11 @@
             border-radius: 50%;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
+        .title {
+            text-align: center;
+        }
+
         footer {
             background-color: #2c3e50;
             color: #fff;
@@ -120,67 +196,366 @@
             bottom: 0;
             width: 100%;
         }
-        
+
+        .logo{
+            
+            width: 40px; /* Adjust size as needed */
+            height: auto;
+            margin-right: 15px; /* Space between logo and company name */
+            border-radius: 45%;
+            
+        }
+        .gallery {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item {
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+        }
+        .gallery-item h3 {
+            text-align: center;
+            padding: 10px;
+            font-size: 1.2rem;
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        /* Back to Top Button */
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: background-color 0.3s;
+        }
+        .back-to-top:hover {
+            background-color: var(--primary-color);
+        }
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 15px;
+                padding: 10px;
+            }
+            .gallery-item h3 {
+                font-size: 1rem;
+                padding: 8px;
+            }
+        }
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 10px;
+                padding: 5px;
+            }
+            .gallery-item h3 {
+                font-size: 0.9rem;
+                padding: 5px;
+            }
+        }
+     
     </style>
+    <script>
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                let rect = card.getBoundingClientRect();
+                let x = (e.clientX - rect.left) / rect.width - 0.5;
+                let y = (e.clientY - rect.top) / rect.height - 0.5;
+                card.style.transform = `rotateY(${x * 20}deg) rotateX(${-y * 20}deg) scale(1.05)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)';
+            });
+        });
+    </script>
 </head>
+
 <body>
-    <header>
-        <h1>ProPrint Designs</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="Gallery.html">Gallery</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <h1>Top Design's</h1>
-    <main class="container">
+    <header class="navbar">
         
+        <h1><img src="Design's/teevoria logo.webp" alt="Company Logo" class="logo">Teevoria</h1>
+        <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </header>
+    <script>
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+    
+        // Toggle the menu visibility when the hamburger icon is clicked
+        menuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+        });
+    
+        // Close the menu if clicked outside of the menu or button
+        document.addEventListener("click", (e) => {
+            if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove("show");
+            }
+        });
+    
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                navLinks.classList.remove("show");
+            }
+        });
+    </script>
+ <h1 class="title">Custom T Shirts</h1>
+ <main class="gallery">
+     <div class="gallery-item">
+         <img src="Emty/men-s-blue-customizable-plus-size-t-shirt-629002-1702979703-1.webp" alt="Modern Abstract Design" loading="lazy">
+         
+     </div>
+     <div class="gallery-item">
+         <img src="Emty/women-s-blue-customizable-oversized-t-shirt-custom-654941-1735279781-1.webp" alt="Geometric Style Design" loading="lazy">
+      
+     </div>
+     <div class="gallery-item">
+         <img src="Emty/men-s-blue-customizable-vest-635914-1711528829-1.webp" alt="Minimalistic Art Design" loading="lazy">
+       
+     </div>
+     <div class="gallery-item">
+         <img src="Emty/women-s-purple-customizable-boyfriend-t-shirt-626002-1699535036-1.webp" alt="Floral Patterns Design" loading="lazy">
+         
+     </div>
+     <div class="gallery-item">
+         <img src="Emty/men-s-green-customizable-t-shirt-627745-1737530543-1.webp" alt="Vintage Look Design" loading="lazy">
+       
+     </div>
+     <div class="gallery-item">
+         <img src="Emty/women-s-red-customizable-t-shirt-585508-1683883055-1.webp" alt="Typography Design" loading="lazy">
+         
+     </div>
+     <div class="gallery-item">
+         <img src="Emty/women-s-pink-customizable-oversized-plus-size-t-shirt-637065-1714746912-1.webp" alt="Creative Illustration Design" loading="lazy">
+        
+     </div>
+     <div class="gallery-item">
+         <img src="Emty/women-s-black-customizable-boyfriend-t-shirt-592148-1683897274-1.webp" alt="Artistic Design" loading="lazy">
+        
+     </div>
+     <div class="gallery-item">
+         <img src="Emty/women-s-white-customizable-oversized-t-shirt-627994-1734437468-1.webp" alt="Artistic Design" loading="lazy">
+         
+     </div>
+     <div class="gallery-item">
+         <img src="Emty/women-s-red-customizable-boyfriend-t-shirt-627995-1700824404-1.webp" alt="Artistic Design" loading="lazy">
+         
+     </div>
+     <div class="gallery-item">
+         <img src="Emty/women-s-purple-streetwear-customizable-oversized-t-shirt-589263-1681457649-1.webp" alt="Artistic Design" loading="lazy">
+        
+     </div>
+     <div class="gallery-item">
+         <img src="Emty/men-s-purple-customizable-t-shirt-626001-1699532624-1.webp" alt="Artistic Design" loading="lazy">
+        
+     </div>
+ </main>
+
+    <h1 class="title">Loved by our customers</h1>
+    <main class="container">
+
         <div class="card">
-            <img src="design.jpg" alt="Design 1">
-            <h3>Modern Abstract</h3>
+            <img src="Design's/blue tree.jpeg" alt="Design 1">
+            <h3>Blue tree</h3>
         </div>
         <div class="card">
-            <img src="proprint.jpg" alt="Design 2">
-            <h3>Geometric Style</h3>
+            <img src="Design's/king fisher center.jpeg" alt="Design 2">
+            <h3>King Fisher's Style</h3>
         </div>
         <div class="card">
-            <img src="last eye.jpg" alt="Design 3">
+            <img src="Design's/center blue.jpeg" alt="Design 3">
             <h3>Minimalistic Art</h3>
         </div>
         <div class="card">
-            <img src="townlist.jpg" alt="Design 4">
+            <img src="Design's/drogan color.jpeg" alt="Design 4">
+            <h3>Droagan Patterns</h3>
+        </div>
+        <div class="card">
+            <img src="Design's/blue eyes.jpeg" alt="Design 4">
+            <h3>Blue Big Eye Patterns</h3>
+        </div>
+        <div class="card">
+            <img src="Design's/black tiger.jpeg" alt="Design 4">
+            <h3>Dark Patterns</h3>
+        </div>
+        <div class="card">
+            <img src="Design's/color of the city.jpeg" alt="Design 4">
+            <h3>Color Of City</h3>
+        </div>
+        <div class="card">
+            <img src="Design's/design.jpg" alt="Design 4">
             <h3>Floral Patterns</h3>
         </div>
+        <div class="card">
+            <img src="Design's/cars.jpeg" alt="Design 4">
+            <h3>Car Patterns</h3>
+        </div>
+        <div class="card">
+            <img src="Design's/last eye.jpg" alt="Design 4">
+            <h3>Yellow Fire Patterns</h3>
+        </div>
+        <div class="card">
+            <img src="Design's/blackline.jpg" alt="Design 4">
+            <h3>blackline Patterns</h3>
+        </div>
+        <div class="card">
+            <img src="Design's/darklin.jpg" alt="Design 4">
+            <h3>Dark Patterns</h3>
+        </div>
+        <div class="card">
+            <img src="Design's/styles dark.jpg" alt="Design 4">
+            <h3>3 line Patterns</h3>
+        </div>
+        <div class="card">
+            <img src="Design's/venom.jpg" alt="Design 4">
+            <h3>venom Patterns</h3>
+        </div>
+        <div class="card">
+            <img src="Design's/vlinedark.jpg" alt="Design 4">
+            <h3>X Patterns</h3>
+        </div>
+        <div class="card">
+            <img src="Design's/xline.jpg" alt="Design 4">
+            <h3>Spider Patterns</h3>
+        </div>
     </main>
+   
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="Lightbox Image" id="lightbox-img">
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">↑</button>
+
+    <h1 class="title">Explore More T-shirts</h1>
     <section class="slider-container">
         <div class="slider" id="slider">
-            <img src="design.jpg" alt="Slider 1">
-            <img src="last eye.jpg" alt="Slider 2">
-            <img src="townlist.jpg" alt="Slider 3">
-            <img src="design.jpg" alt="Slider 4">
-            <img src="townlist.jpg" alt="Slider 3">
-            <img src="design.jpg" alt="Slider 4">
-            <img src="townlist.jpg" alt="Slider 3">
-            <img src="design.jpg" alt="Slider 4">
-            <img src="townlist.jpg" alt="Slider 3">
-            <img src="design.jpg" alt="Slider 4">
-            <img src="townlist.jpg" alt="Slider 3">
-            <img src="design.jpg" alt="Slider 4">
-            <img src="townlist.jpg" alt="Slider 3">
-            <img src="design.jpg" alt="Slider 4">
+            <img src="Design's/black tiger.jpeg" alt="Slider 1">
+            <img src="Design's/blue cars.jpeg" alt="Slider 2">
+            <img src="Design's/blue eyes.jpeg" alt="Slider 3">
+            <img src="Design's/blue tree.jpeg" alt="Slider 4">
+            <img src="Design's/cars.jpeg" alt="Slider 3">
+            <img src="Design's/center blue.jpeg" alt="Slider 4">
+            <img src="Design's/center book of tree.jpeg" alt="Slider 3">
+            <img src="Design's/circle of the city.jpeg" alt="Slider 4">
+            <img src="Design's/dark droagan.jpeg" alt="Slider 3">
+            <img src="Design's/design.jpg" alt="Slider 4">
+            <img src="Design's/drogan color.jpeg" alt="Slider 3">
+            <img src="Design's/green eyes.jpeg" alt="Slider 4">
+            <img src="Design's/king fisher 3.jpeg" alt="Slider 3">
+            <img src="Design's/king fisher center.jpeg" alt="Slider 4">
         </div>
+        <!-- Add Previous and Next Buttons -->
         <div class="slider-buttons">
-            <button id="prev">&#10094;</button>
-            <button id="next">&#10095;</button>
+            <button id="prev">&lt;</button>
+            <button id="next">&gt;</button>
         </div>
     </section>
-
     <footer>
-        <p>&copy; 2025 ProPrint Designs. All Rights Reserved.</p>
+        <p>&copy; 2025 Teevoria Designs. All Rights Reserved.</p>
     </footer>
+    <script>
+        // Lightbox Functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const galleryImages = document.querySelectorAll('.gallery-item img');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.classList.add('active');
+                lightboxImg.src = img.src;
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Dynamic Year in Footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
     <script>
         const slider = document.getElementById('slider');
         const next = document.getElementById('next');
@@ -230,5 +605,7 @@
             isDragging = false;
         });
     </script>
+
 </body>
+
 </html>
