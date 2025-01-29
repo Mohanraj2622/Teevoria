@@ -87,9 +87,8 @@
             bottom: 0;
             width: 100%;
         }
-
-        /* Menu Styling */
-        .navbar {
+                        /* Menu Styling */
+                        .navbar {
             background-color: #2c3e50;
             color: white;
             padding: 15px 20px;
@@ -168,16 +167,13 @@
                 right: 0;
             }
         }
-
-        .logo {
-
-            width: 40px;
-            /* Adjust size as needed */
+        .logo{
+            
+            width: 40px; /* Adjust size as needed */
             height: auto;
-            margin-right: 15px;
-            /* Space between logo and company name */
+            margin-right: 15px; /* Space between logo and company name */
             border-radius: 45%;
-
+            
         }
     </style>
 </head>
@@ -196,19 +192,19 @@
     <script>
         const menuToggle = document.querySelector(".menu-toggle");
         const navLinks = document.querySelector(".nav-links");
-
+    
         // Toggle the menu visibility when the hamburger icon is clicked
         menuToggle.addEventListener("click", () => {
             navLinks.classList.toggle("show");
         });
-
+    
         // Close the menu if clicked outside of the menu or button
         document.addEventListener("click", (e) => {
             if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
                 navLinks.classList.remove("show");
             }
         });
-
+    
         document.addEventListener("keydown", (e) => {
             if (e.key === "Escape") {
                 navLinks.classList.remove("show");
@@ -224,57 +220,26 @@
             <p>Karapakkam,</p>
             <p>Chennai, TN, India</p>
             <p>Email: <a href="mailto:contact@teevoriadesigns.com">contact@teevoriadesigns.com</a></p>
-            <!--<p>Phone: +91 6379657344</p>-->
         </div>
 
         <!-- Contact Form -->
         <div class="contact-form">
             <h3>Send Us A Message</h3>
-            <form id="contactForm">
-                <input type="text" name="name" id="name" placeholder="Your Name" required><br>
-                <input type="email" name="email" id="email" placeholder="Your Email" required><br>
-                <textarea name="message" id="message" placeholder="Your Message" required></textarea><br>
-                <button type="submit">Send</button>
+            <form action="https://getform.io/f/bejjgega" method="post">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
             </form>
-
-            <script>
-                document.getElementById("contactForm").addEventListener("submit", function (event) {
-                    event.preventDefault();
-
-                    const formData = {
-                        name: document.getElementById("name").value,
-                        email: document.getElementById("email").value,
-                        message: document.getElementById("message").value
-                    };
-
-                    fetch("https://script.google.com/macros/s/AKfycbyw7E8h7-r2_CJ4YdwyfUYCh1QIiuAH2dg5leNgUukjEDKTMoF0OKXyod1PJX5fvIPT/exec", {  // Replace with your Web App URL
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(formData)
-                    })
-                        .then(response => response.json())
-                        .then(data => {
-                            console.log("Response:", data);
-                            alert("Message sent successfully!");
-                        })
-                        .catch(error => {
-                            console.error("Error:", error);
-                            alert("Error sending message.");
-                        });
-                });
-
-
-            </script>
         </div>
-
     </div>
-
     <footer>
         <p>&copy; 2025 Teevoria Designs. All Rights Reserved.</p>
     </footer>
-
 </body>
-
 </html>
