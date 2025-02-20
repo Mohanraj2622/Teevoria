@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>About Us - Teevoria Designs</title>
     <link rel="icon" href="Design's/teevoria logo.webp" sizes="32x32">
     <style>
@@ -191,6 +191,18 @@
         </ul>
     </header>
     <script>
+        document.addEventListener("keydown", function (event) {
+  if (event.ctrlKey && (event.key === "=" || event.key === "-" || event.key === "0")) {
+    event.preventDefault();
+  }
+});
+
+document.addEventListener("wheel", function (event) {
+  if (event.ctrlKey) {
+    event.preventDefault();
+  }
+}, { passive: false });
+
         const menuToggle = document.querySelector(".menu-toggle");
         const navLinks = document.querySelector(".nav-links");
     
