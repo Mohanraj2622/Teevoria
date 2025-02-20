@@ -274,18 +274,6 @@
         </ul>
     </header>
     <script>
-        document.addEventListener("keydown", function (event) {
-  if (event.ctrlKey && (event.key === "=" || event.key === "-" || event.key === "0")) {
-    event.preventDefault();
-  }
-});
-
-document.addEventListener("wheel", function (event) {
-  if (event.ctrlKey) {
-    event.preventDefault();
-  }
-}, { passive: false });
-
         const menuToggle = document.querySelector(".menu-toggle");
         const navLinks = document.querySelector(".nav-links");
     
@@ -306,12 +294,23 @@ document.addEventListener("wheel", function (event) {
                 navLinks.classList.remove("show");
             }
         });
+                document.addEventListener("keydown", function (event) {
+  if (event.ctrlKey && (event.key === "=" || event.key === "-" || event.key === "0")) {
+    event.preventDefault();
+  }
+});
+
+document.addEventListener("wheel", function (event) {
+  if (event.ctrlKey) {
+    event.preventDefault();
+  }
+}, { passive: false });
     </script>
     <main class="gallery">
         
         <div class="gallery-item">
             <img src="Design's/black tiger.jpeg" alt="Modern Abstract Design" loading="lazy">
-            <h3>Modern Abstract</h3>
+            <h3>Tiger Abstract</h3>
         </div>
         <div class="gallery-item">
             <img src="Design's/blackline.jpg" alt="Geometric Style Design" loading="lazy">
@@ -323,7 +322,7 @@ document.addEventListener("wheel", function (event) {
         </div>
         <div class="gallery-item">
             <img src="Design's/blue eyes.jpeg" alt="Floral Patterns Design" loading="lazy">
-            <h3>Floral Patterns</h3>
+            <h3>Eye Patterns</h3>
         </div>
         <div class="gallery-item">
             <img src="Design's/blue tree.jpeg" alt="Vintage Look Design" loading="lazy">
@@ -339,15 +338,15 @@ document.addEventListener("wheel", function (event) {
         </div>
         <div class="gallery-item">
             <img src="Design's/circle of the city.jpeg" alt="Artistic Design" loading="lazy">
-            <h3>Artistic Design</h3>
+            <h3>Dark Design</h3>
         </div>
         <div class="gallery-item">
             <img src="Design's/color of the city.jpeg" alt="Artistic Design" loading="lazy">
-            <h3>Artistic Design</h3>
+            <h3>City Heart Design</h3>
         </div>
         <div class="gallery-item">
             <img src="Design's/dark droagan.jpeg" alt="Artistic Design" loading="lazy">
-            <h3>Artistic Design</h3>
+            <h3>Drogan Design</h3>
         </div>
         <div class="gallery-item">
             <img src="Design's/dark world.jpeg" alt="Artistic Design" loading="lazy">
